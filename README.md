@@ -49,8 +49,10 @@ Sharif\ImageCropper\ImageCropperServiceProvider::class,
 ## Publish assets & views
 
 ```bash
-php artisan vendor:publish --provider="Sharif\ImageCropper\ImageCropperServiceProvider" --tag="image-cropper-assets"
-php artisan vendor:publish --provider="Sharif\ImageCropper\ImageCropperServiceProvider" --tag="image-cropper-views"
+php artisan vendor:publish --provider="Sharifuddin\ImageCropper\ImageCropperServiceProvider" --tag="image-cropper-assets"
+php artisan vendor:publish --provider="Sharifuddin\ImageCropper\ImageCropperServiceProvider" --tag="image-cropper-views"
+php artisan vendor:publish --provider="Sharifuddin\ImageCropper\ImageCropperServiceProvider" --tag="image-cropper-config"
+
 php artisan storage:link
 ```
 

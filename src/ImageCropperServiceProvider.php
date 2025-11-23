@@ -1,6 +1,6 @@
 <?php
 
-namespace Sharif\ImageCropper;
+namespace Sharifuddin\ImageCropper;
 
 use Illuminate\Support\ServiceProvider;
 
