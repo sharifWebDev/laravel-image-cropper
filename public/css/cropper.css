@@ -1,0 +1,15 @@
+.image-cropper-wrapper {
+    position: relative;
+    margin: 10px 0;
+}
+.ratio-selector button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.crop-container {
+    margin-top: 10px;
+    max-width: 500px;
+    height: 300px;
+    border: 1px dashed #ccc;
+}
