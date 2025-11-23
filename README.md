@@ -1,7 +1,3 @@
-Perfect! Here's the updated **README.md snippet** including your **package dependencies, provider, asset publishing, folder permissions, route, controller, and usage examples**. I’ve integrated usage sections for Blade, `<img>`, and server-side upload.
-
----
-
 # Laravel Image Cropper
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
