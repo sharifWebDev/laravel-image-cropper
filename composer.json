@@ -13,11 +13,17 @@
   ],
   "homepage": "https://github.com/sharifwebdev/laravel-image-cropper",
   "license": "MIT",
+  "scripts": {
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes"
+    },
   "authors": [
     {
-      "name": "Sharif Uddin",
-      "email": "sharif.webpro@gmail.com",
-      "role": "Developer"
+        "name": "Sharif Uddin",
+        "email": "sharif.webpro@gmail.com",
+        "homepage": "https://sharifwebdev.github.io/",
+        "role": "Developer"
     }
   ],
   "require": {
