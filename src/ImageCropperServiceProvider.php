@@ -13,7 +13,7 @@ class ImageCropperServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton('image-cropper', function ($app) {
-            return new imageCropper($app['config']->get('image-cropper'));
+            return new \Sharifuddin\ImageCropper\imageCropper($app['config']->get('image-cropper'));
         });
     }
 
@@ -40,7 +40,7 @@ class ImageCropperServiceProvider extends ServiceProvider
 
         // Register blade component
         $this->loadViewComponentsAs('image-cropper', [
-            Components\ImageCropper::class,
+            \Sharifuddin\ImageCropper\Components\ImageCropper::class,
         ]);
     }
 }
