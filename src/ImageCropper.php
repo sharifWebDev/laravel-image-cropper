@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
 use RuntimeException;
 
-class imageCropper
+class ImageCropper
 {
     protected $config;
 
