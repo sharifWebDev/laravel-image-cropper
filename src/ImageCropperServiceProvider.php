@@ -13,7 +13,7 @@ class ImageCropperServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton('image-cropper', function ($app) {
-            return new ImageCropper($app['config']->get('image-cropper'));
+            return new imageCropper($app['config']->get('image-cropper'));
         });
     }
 
@@ -42,8 +42,5 @@ class ImageCropperServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs('image-cropper', [
             Components\ImageCropper::class,
         ]);
-
-        // Register routes
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 }

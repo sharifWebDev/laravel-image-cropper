@@ -23,7 +23,7 @@ class ImageCropper extends Component
     ) {
         $this->name = $name;
 
-        // Get configuration with fallbacks
+        // Get configuration
         $config = app('image-cropper')->config();
 
         $this->ratios = $ratios ?? $config['default_ratios'];

@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'max_file_size' => env('IMAGE_CROPPER_MAX_SIZE', 10), // 10MB
+    'max_file_size' => env('IMAGE_CROPPER_MAX_SIZE', 10),
 
     /*
     |--------------------------------------------------------------------------
@@ -127,28 +127,4 @@ return [
         'image/webp',
         'image/svg+xml',
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Client-Side Only Mode
-    |--------------------------------------------------------------------------
-    |
-    | When enabled, images are only cropped client-side and sent as base64
-    | without server upload. When disabled, images are uploaded to server.
-    |
-    */
-
-    'client_side_only' => env('IMAGE_CROPPER_CLIENT_SIDE_ONLY', true),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Auto-Process Form Submissions
-    |--------------------------------------------------------------------------
-    |
-    | When enabled, automatically processes all form inputs with 
-    | class "image-cropper" and transforms them into cropping interfaces.
-    |
-    */
-
-    'auto_process_forms' => env('IMAGE_CROPPER_AUTO_PROCESS', true),
 ];

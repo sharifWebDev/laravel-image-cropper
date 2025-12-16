@@ -1,26 +1,34 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sharifuddin\ImageCropper\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Sharifuddin\ImageCropper\Facades\ImageCropper;
 
 class ImageUploadController extends Controller
 {
-    public function uploadImage(Request $request)
+    public function upload(Request $request)
     {
-        $base64Image = $request->input('image');
-        
-        // Save image using the package
-        $path = ImageCropper::saveImage($base64Image);
-        
-        // Get public URL
-        $url = ImageCropper::getPublicUrl($path);
-        
-        return response()->json([
-            'success' => true,
-            'path' => $path,
-            'url' => $url
+        $request->validate([
+            'image' => 'required|string',
         ]);
+
+        try {
+            $path = ImageCropper::saveImage($request->input('image'));
+            
+            return response()->json([
+                'success' => true,
+                'path' => $path,
+                'url' => ImageCropper::getPublicUrl($path),
+                'message' => 'Image uploaded successfully'
+            ]);
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 400);
+        }
     }
 }
