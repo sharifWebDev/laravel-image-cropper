@@ -1,14 +1,26 @@
 <?php
 
-namespace LaravelImageCropper\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Sharifuddin\ImageCropper\Facades\ImageCropper;
 
 class ImageUploadController extends Controller
 {
-    public function store(Request $request)
+    public function uploadImage(Request $request)
     {
-        return response()->json(['status' => 'ok']);
+        $base64Image = $request->input('image');
+        
+        // Save image using the package
+        $path = ImageCropper::saveImage($base64Image);
+        
+        // Get public URL
+        $url = ImageCropper::getPublicUrl($path);
+        
+        return response()->json([
+            'success' => true,
+            'path' => $path,
+            'url' => $url
+        ]);
     }
 }

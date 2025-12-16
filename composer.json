@@ -1,9 +1,59 @@
 {
-  "name": "sharif/laravel-image-cropper",
-  "description": "Laravel Image Cropper Package",
+  "name": "sharifuddin/laravel-image-cropper",
+  "description": "A flexible and optimized Laravel image cropper package with multiple ratios, optional cropping, and WebP/JPG/PNG support.",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "image",
+    "cropper",
+    "image-upload",
+    "webp",
+    "base64",
+    "image-cropper"
+  ],
+  "homepage": "https://github.com/sharifwebdev/laravel-image-cropper",
+  "license": "MIT",
+  "scripts": {
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes"
+    },
+  "authors": [
+    {
+        "name": "Sharif Uddin",
+        "email": "sharif.webpro@gmail.com",
+        "homepage": "https://sharifwebdev.github.io/",
+        "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^8.0|^9.0|^10.0|^11.0|^12.0",
+    "intervention/image": "^2.7"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0|^7.0|^8.0",
+    "phpunit/phpunit": "^9.0|^10.0",
+    "spatie/image-optimizer": "^1.0"
+  },
   "autoload": {
     "psr-4": {
-      "LaravelImageCropper\\": "src/"
-    }
-  }
+      "Sharifuddin\\ImageCropper\\": "src/"
+    },
+    "files": [
+      "src/imageCropper.php"
+    ]
+  },
+   "extra": {
+        "laravel": {
+            "providers": [
+                "Sharifuddin\\ImageCropper\\ImageCropperServiceProvider"
+            ],
+            "aliases": {
+                "ImageCropper": "Sharifuddin\\ImageCropper\\Facades\\ImageCropper"
+            }
+        }
+    },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }

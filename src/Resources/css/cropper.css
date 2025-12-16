@@ -1,2 +1,109 @@
-/* Cropper custom styles */
-.image-cropper { max-width: 100%; }
+/* Image Cropper Package Styles */
+
+.global-image-cropper-container {
+    position: relative;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 0.375rem;
+    background: #f8f9fa;
+}
+
+.image-cropper-preview-container {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 10px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cropper-controls {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    height: 100%;
+}
+
+.ratio-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ratio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ratio-option:hover {
+    border-color: #0d6efd;
+    background: #f8f9fa;
+}
+
+.ratio-option input[type="radio"]:checked + span {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.cropped-image-preview {
+    border: 2px dashed #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.cropped-image-preview .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.cropped-image-preview .card-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+}
+
+.cropped-image-preview .card-body {
+    padding: 1rem;
+}
+
+.cropped-image-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #e9ecef;
+}
+
+/* Cropper.js customization */
+.cropper-view-box {
+    outline: 2px solid #0d6efd;
+    outline-color: rgba(13, 110, 253, 0.75);
+}
+
+.cropper-line {
+    background-color: #0d6efd;
+}
+
+.cropper-point {
+    background-color: #0d6efd;
+    width: 8px;
+    height: 8px;
+}
+
+.modal-lg {
+    max-width: 1000px;
+}
+
+form input[data-cropper-processed] {
+    display: none !important;
+}

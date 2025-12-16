@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelImageCropper\Facades;
+namespace Sharifuddin\ImageCropper\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
