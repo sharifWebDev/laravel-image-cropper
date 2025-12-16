@@ -245,6 +245,51 @@ Use the included Blade component for more control:
     :radio="true"
     :crop="true"
 />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+    <link rel="stylesheet" href="{{ asset('vendor/image-cropper/css/cropper.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="POST" action="/submit">
+            @csrf
+
+            <!-- Method 1: Blade Component -->
+            <x-image-cropper
+                name="profile_image"
+                label="Upload Profile Picture"
+                help="Select and crop your profile picture (Max: 5MB)"
+                required
+                class="mt-3"
+            />
+
+            <!-- Method 2: Auto-transformed input -->
+            <div class="mb-3">
+                <label class="form-label">Cover Image</label>
+                <input type="file"
+                       name="cover_image"
+                       class="form-control image-cropper"
+                       required>
+                <div class="form-text">Select and crop your cover image</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Required JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+    <script src="{{ asset('vendor/image-cropper/js/auto-transform.js') }}"></script>
+</body>
+</html>
+
 ```
 
 ### Method 3: Server-Side Upload Controller

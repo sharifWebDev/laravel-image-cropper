@@ -3,6 +3,7 @@
 namespace Sharifuddin\ImageCropper;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class ImageCropperServiceProvider extends ServiceProvider
 {
@@ -38,9 +39,16 @@ class ImageCropperServiceProvider extends ServiceProvider
         // Load views
         $this->loadViewsFrom(__DIR__.'/Views', 'image-cropper');
 
-        // Register blade component
-        $this->loadViewComponentsAs('image-cropper', [
-            \Sharifuddin\ImageCropper\Components\ImageCropper::class,
-        ]);
+        // Register the Blade component
+        $this->registerBladeComponents();
+    }
+
+    protected function registerBladeComponents()
+    {
+        // Register the image-cropper component
+        Blade::component('image-cropper::component', 'image-cropper');
+
+        // Alternative: Register with alias
+        Blade::component('Sharifuddin\\ImageCropper\\Components\\ImageCropper', 'image-cropper');
     }
 }
