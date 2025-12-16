@@ -41,7 +41,7 @@
       "Sharifuddin\\ImageCropper\\": "src/"
     },
     "files": [
-      "src/imageCropper.php"
+      "src/ImageCropper.php"
     ]
   },
    "extra": {
